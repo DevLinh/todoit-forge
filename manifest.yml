@@ -7,7 +7,7 @@ modules:
       title: Todos
       viewportSize: medium
       tooltip: Add a todo list
-      icon: https://developer.atlassian.com/platform/forge/images/issue-panel-icon.svg
+      icon: https://media.flaticon.com/dist/min/img/logo/flaticon_negative.svg
   function:
     - key: resolver
       handler: index.handler
@@ -19,4 +19,6 @@ permissions:
     - storage:app
   content:
     styles:
-      - 'unsafe-inline'  
+      - 'unsafe-inline'
+app:
+  id: ari:cloud:ecosystem::app/8d990400-1573-490c-ba67-a3d458c2dccc

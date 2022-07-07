@@ -3,6 +3,7 @@ import { invoke } from '@forge/bridge';
 
 // Atlaskit
 import LoadingButton from '@atlaskit/button/loading-button';   
+import Button from '@atlaskit/button'
 import { Checkbox } from '@atlaskit/checkbox';
 import EditorCloseIcon from '@atlaskit/icon/glyph/editor/close';
 import TrashIcon from '@atlaskit/icon/glyph/trash';
@@ -74,6 +75,11 @@ function App() {
 
   useEffect(() => {
     if (!todos) return;
+    //After UI is rendered, we'll append a new TODO that represents a user
+    if(!todos.find(e => e.label === 'You are here by default!')) {
+      console.log('Noice!');
+      createTodo('You are here by default!');
+    }
     if (!todos.find(todo => todo.isSaving || todo.isDeleting)) return;
 
     Promise.all(
@@ -92,6 +98,7 @@ function App() {
     )
     .then(saved => saved.filter(a => a))
     .then(setTodos)
+
   }, [todos]);
 
   if (!todos) {
